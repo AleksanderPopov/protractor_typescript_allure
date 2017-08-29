@@ -13,8 +13,11 @@
     "@types/node": "^6.0.62"
   },
   "scripts": {
-    "pretest": "npm run tsc",
-    "test": "protractor ConvertedJSFiles/config.js",
-    "tsc": "tsc"
+    "cleanResources": "mvn clean",
+    "compile": "tsc",
+    "generateHtmlReports": "mvn site -Dallure.results_pattern=allure-results",
+
+    "pretest": "npm run cleanResources && npm run compile",
+    "test": "protractor build/config.js || npm run generateHtmlReports"
   }
 }

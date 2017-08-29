@@ -20,4 +20,8 @@ describe('protractorjs tests', function () {
       .then(async it => await it.shouldHaveTopics(messageTopic));
   });
 
+  it('some strange test', () => {
+    expect(true).toBe(false);
+  });
+
 });

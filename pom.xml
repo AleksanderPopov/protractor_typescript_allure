@@ -22,6 +22,7 @@
     </dependencies>
     <build>
         <plugins>
+            
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
@@ -32,6 +33,52 @@
                     <stopPort>2299</stopPort>
                 </configuration>
             </plugin>
+
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-clean-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <filesets>
+                    <fileset>
+                        <directory>allure-results</directory>
+                        <followSymlinks>false</followSymlinks>
+                    </fileset>
+                    <fileset>
+                        <directory>build</directory>
+                        <followSymlinks>false</followSymlinks>
+                    </fileset>
+                    <fileset>
+                        <directory>target</directory>
+                        <followSymlinks>false</followSymlinks>
+                    </fileset>
+                </filesets>
+            </configuration>
+        </plugin>
+
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>allure-results</directory>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>build</directory>
+                            <includes>
+                                <include>**/*.*</include>
+                            </includes>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin> -->
         </plugins>
     </build>
     <reporting>

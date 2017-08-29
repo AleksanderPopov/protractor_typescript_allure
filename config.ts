@@ -7,7 +7,7 @@ export let config: Config = {
   capabilities: {
     'browserName': 'chrome'
     },
-  specs: ['../ConvertedJSFiles/specs/*.js'],
+  specs: ['../build/specs/*.js'],
   framework: 'jasmine2',
   jasmineNodeOpts: {
     showColors: true,
