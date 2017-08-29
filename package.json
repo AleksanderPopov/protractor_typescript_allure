@@ -18,6 +18,6 @@
     "generateHtmlReports": "mvn site -Dallure.results_pattern=allure-results",
 
     "pretest": "npm run cleanResources && npm run compile",
-    "test": "protractor build/config.js || npm run generateHtmlReports"
+    "test": "protractor build/config.js"
   }
 }

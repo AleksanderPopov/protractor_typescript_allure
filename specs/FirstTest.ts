@@ -6,7 +6,7 @@ describe('protractorjs tests', function () {
   const inboxPage: InboxPage = new InboxPage();
   const email: string = "aleksander.popov.93@gmail.com";
   const password: string = "";
-  const messageTopic: string = "unic topic21";
+  const messageTopic: string = "topic " + Date.now().toString();
 
   it('gmail test', async () => {
     await loginPage.open();
